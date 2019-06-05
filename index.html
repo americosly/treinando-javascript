@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exemplo - JS</title>
+</head>
+<body>
+
+    <script>
+        function soma(callback){
+            let resultado = 3 + 4;
+
+            callback();
+        }
+
+        function imprimeResultado(){
+            console.log("Fiz a conta!");
+        }
+
+        soma(imprimeResultado);
+        // exemplo forEach
+        let alunos = ["ana", "john", "vini", "felipe", "thom"];
+        alunos.forEach(function(valor, indice){
+            console.log(`${indice} - ${valor}`);
+        });
+
+        // exemplo map
+        let idade = [30, 35, 97, 16, 40];
+
+        let maisJovem = idade.map(function (valor){
+            return valor / 2;
+        });
+
+        let maisVelhos = idade.filter(function(valor){
+            return valor > 40;
+        });
+
+        let idadeTotal = idade.reduce(function(total, valor){
+            return total + valor;
+        });
+
+        //exemplo de objeto
+        let pessoa = {
+            'nome' : 'Hendy',
+            'idade' : 23,
+            'profissão' : 'dev',
+            'habilidades' : ['html', 'css', 'php'],
+            'programar' : function(){
+                console.log("programando...")
+            }
+        };
+
+        console.log(pessoa.profisão);
+        console.log(pessoa['nome']); // esse é mais usado
+
+        console.log(pessoa['habilidades'][0]); // pegar posição do array de  habilidades
+
+        pessoa.pais = ['Nayane', 'Herbert']; // adicionar mais uma propriedade ao objeto
+
+        pessoa.programar(); // executar método
+
+        pessoa['programar'](); //executar método
+
+        
+    </script>
+
+</body>
+</html>
